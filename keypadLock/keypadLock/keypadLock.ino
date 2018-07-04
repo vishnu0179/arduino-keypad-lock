@@ -1,3 +1,5 @@
+
+
 #include <Servo.h>
 #include <Keypad.h>
 
@@ -60,14 +62,14 @@ void keypadEvent(KeypadEvent eKey){
               typedPassword=""; 
               break;
     
-     default: typedPassword += ekey; delay(1);
+     default: typedPassword += eKey; delay(1);
 }
 }
 }
 
 void checkPassword(){
   
-if (strcmp(password,typedPassword)){  //if password is right open
+if (password==typedPassword){  //if password is right open
     
     Serial.println("Accepted");
     
@@ -85,7 +87,7 @@ if (strcmp(password,typedPassword)){  //if password is right open
     Serial.println("Denied"); //if passwords wrong keep locked
     //Serial.write(254);
     delay(10);
-    password=
+    
     //add code to run if it did not work
     myservo.write(0);
     digitalWrite(12, HIGH);
